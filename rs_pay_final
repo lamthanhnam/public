@@ -1,6 +1,7 @@
 $skey=$k;
 Function ConvertTo-UnsecureString {
     Param (
+        [Parameter(Mandatory=$True)]
         [System.Security.SecureString]$ss
     )
     Try {
